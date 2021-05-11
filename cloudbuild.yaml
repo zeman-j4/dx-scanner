@@ -1,0 +1,13 @@
+steps:
+- name: node:12
+  entrypoint: yarn
+  args: ['install']
+
+- name: 'gcr.io/whereis-1563781546305/vlasy-scanner:tag6'
+  entrypoint: 'dx-scanner'
+  args: ['run', "--ci"]
+  env:
+    - 'CLOUDBUILD_HEAD_REPO_URL=$_HEAD_REPO_URL'
+    - 'CLOUDBUILD_PR_NUMBER=$_PR_NUMBER'
+    - 'GITHUB_TOKEN=$_GITHUB_TOKEN'
+    - 'DXSCANNER_API_TOKEN=$_DXSCANNER_API_TOKEN'
