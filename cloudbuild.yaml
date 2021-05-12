@@ -3,7 +3,7 @@ steps:
   entrypoint: yarn
   args: ['install']
 
-- name: 'gcr.io/whereis-1563781546305/vlasy-scanner:tag6'
+- name: 'gcr.io/cloud-builders/docker'
   entrypoint: 'dx-scanner'
   args: ['run', "--ci"]
   env:
