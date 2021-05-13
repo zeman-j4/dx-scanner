@@ -3,7 +3,7 @@ steps:
   entrypoint: yarn
   args: ['install']
 
-- name: 'gcr.io/cloud-builders/docker'
+- name: 'dxheroes/dx-scanner:latest'
   entrypoint: 'dx-scanner'
   args: ['run', "--ci"]
   env:
